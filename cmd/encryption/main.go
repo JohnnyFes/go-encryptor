@@ -7,10 +7,10 @@ import (
 	"os"
 	"strings"
 
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/pkg/config"
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/pkg/encryption"
+	"github.com/GandzyTM/go-encryptor/pkg/config"
+	"github.com/GandzyTM/go-encryptor/pkg/encryption"
 
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/internal/configfile"
+	"github.com/GandzyTM/go-encryptor/internal/configfile"
 )
 
 var (
