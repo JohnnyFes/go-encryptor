@@ -1,8 +1,8 @@
 package encryption
 
 import (
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/internal/interfaces"
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/pkg/config"
+	"github.com/GandzyTM/go-encryptor/internal/interfaces"
+	"github.com/GandzyTM/go-encryptor/pkg/config"
 )
 
 // EncryptorProvider реализует интерфейс interfaces.EncryptorProvider
