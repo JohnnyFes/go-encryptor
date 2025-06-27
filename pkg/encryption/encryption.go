@@ -1,10 +1,10 @@
 package encryption
 
 import (
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/internal/encryption"
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/internal/interfaces"
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/internal/sensitive"
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/pkg/config"
+	"github.com/GandzyTM/go-encryptor/internal/encryption"
+	"github.com/GandzyTM/go-encryptor/internal/interfaces"
+	"github.com/GandzyTM/go-encryptor/internal/sensitive"
+	"github.com/GandzyTM/go-encryptor/pkg/config"
 )
 
 // Encryptor предоставляет публичный API для шифрования
