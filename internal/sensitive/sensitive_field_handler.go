@@ -3,7 +3,7 @@ package sensitive
 import (
 	"reflect"
 
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/internal/interfaces"
+	"github.com/GandzyTM/go-encryptor/internal/interfaces"
 )
 
 // FieldEncryptor реализует интерфейс interfaces.FieldEncryptor для шифрования полей в структурах
