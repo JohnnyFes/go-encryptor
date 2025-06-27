@@ -1,4 +1,4 @@
-module gitlab.pikabiduskibidi.ru/box/go-encryption
+module github.com/GandzyTM/go-encryptor
 
 go 1.21
 
