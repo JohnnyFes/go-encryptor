@@ -5,33 +5,32 @@
 ## Особенности
 
 - Шифрование AES-256 в режиме GCM
-- Поддержка автоматического расшифрования конфигурации
+- Поддержка автоматического шифрования и расшифрования полей структур по тегам `encrypted`
 - Утилиты для работы с чувствительными данными
 - Поддержка base64 кодирования ключей
 
 ## Установка
 
 ```bash
-go get gitlab.pikabiduskibidi.ru/box/go-encryption@v1.0.0
+go get github.com/GandzyTM/go-encryptor@latest
 ```
 
 ## Работа с приватным репозиторием (важно)
 
-Если вы используете приватный GitLab, для корректной работы go get/go mod рекомендуется установить переменную окружения GOPRIVATE:
+Если репозиторий находится в приватной организации GitHub, настройте переменную окружения `GOPRIVATE`, чтобы `go` не обращался к публичным прокси и checksum-сервисам:
 
 ```sh
-export GOPRIVATE=gitlab.pikabiduskibidi.ru
+export GOPRIVATE=github.com/GandzyTM
 ```
 
-- Это отключает проверку через публичные прокси и checksum-сервисы для всех модулей с этим доменом.
-- Публичные пакеты (github.com, golang.org и т.д.) продолжают работать как обычно.
-- Можно добавить в .bashrc/.zshrc или в CI/CD pipeline:
+- Это нужно выполнить локально и в CI/CD пайплайнах, если модуль недоступен публично.
+- Остальные публичные модули (github.com, golang.org и т.д.) продолжат загружаться как обычно.
+- Переменную можно добавить в shell-профиль или в конфигурацию пайплайна, например:
 
 ```yaml
-# Пример для GitLab CI
-default:
-  before_script:
-    - export GOPRIVATE=gitlab.pikabiduskibidi.ru
+# Пример для GitHub Actions
+env:
+  GOPRIVATE: github.com/GandzyTM
 ```
 
 ## Использование
@@ -40,8 +39,8 @@ default:
 
 ```go
 import (
-    "watchdog/go-encryption/pkg/config"
-    "watchdog/go-encryption/pkg/encryption"
+    "github.com/GandzyTM/go-encryptor/pkg/config"
+    "github.com/GandzyTM/go-encryptor/pkg/encryption"
 )
 
 // Создаем конфигурацию
@@ -103,7 +102,7 @@ err = encryptor.DecryptFields(&config)
 
 ## CLI-утилита
 
-В проекте есть отдельная CLI-утилита для шифрования строк и работы с конфигурациями. Точка входа: `cmd/encryption/main.go`.
+В проекте есть отдельная CLI-утилита для шифрования строк и обновления конфигурационных файлов. Точка входа: `cmd/encryption/main.go`.
 
 ### Сборка
 
@@ -125,7 +124,7 @@ $ go install ./cmd/encryption
 # Шифрование нескольких паролей
 $ ./encryption -key="your-32-byte-key" -passwords="secret123,password456,key789"
 
-# Обновление нескольких полей в конфиге (пример, требует доработки)
+# Обновление нескольких полей в конфиге
 $ ./encryption -key="your-32-byte-key" -config="config.yml" -fields="database.password,redis.password" -passwords="secret123,password456"
 ```
 
@@ -135,7 +134,7 @@ $ ./encryption -key="your-32-byte-key" -config="config.yml" -fields="database.pa
 - `-config` — путь к YAML/JSON конфигу
 - `-fields` — список полей для обновления в конфиге (через запятую)
 
-> Для расширения функциональности до работы с файлами конфигурации доработайте соответствующий блок в `main.go`.
+> Утилита шифрует значения и обновляет YAML/JSON файл на месте. Расшифровка через CLI не поддерживается — используйте пакет `pkg/encryption` в приложении.
 
 ## Примеры CLI-команд
 
