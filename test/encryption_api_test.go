@@ -3,8 +3,8 @@ package encryption
 import (
 	"testing"
 
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/pkg/config"
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/pkg/encryption"
+	"github.com/JohnnyFes/go-encryptor/pkg/config"
+	"github.com/JohnnyFes/go-encryptor/pkg/encryption"
 )
 
 func TestNewEncryptor(t *testing.T) {
