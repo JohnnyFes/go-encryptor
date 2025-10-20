@@ -1,7 +1,7 @@
 package interfaces
 
 import (
-	"github.com/GandzyTM/go-encryptor/pkg/config"
+	"github.com/JohnnyFes/go-encryptor/pkg/config"
 )
 
 // Encryptor определяет интерфейс для шифрования данных
