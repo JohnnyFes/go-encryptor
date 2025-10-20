@@ -3,7 +3,7 @@ package encryption_test
 import (
 	"testing"
 
-	"gitlab.pikabiduskibidi.ru/box/go-encryption/internal/encryption"
+	"github.com/JohnnyFes/go-encryptor/internal/encryption"
 )
 
 func TestNewEncryptor(t *testing.T) {
