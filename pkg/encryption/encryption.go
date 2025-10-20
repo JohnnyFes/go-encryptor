@@ -1,10 +1,10 @@
 package encryption
 
 import (
-	"github.com/GandzyTM/go-encryptor/internal/encryption"
-	"github.com/GandzyTM/go-encryptor/internal/interfaces"
-	"github.com/GandzyTM/go-encryptor/internal/sensitive"
-	"github.com/GandzyTM/go-encryptor/pkg/config"
+	"github.com/JohnnyFes/go-encryptor/internal/encryption"
+	"github.com/JohnnyFes/go-encryptor/internal/interfaces"
+	"github.com/JohnnyFes/go-encryptor/internal/sensitive"
+	"github.com/JohnnyFes/go-encryptor/pkg/config"
 )
 
 // Encryptor предоставляет публичный API для шифрования

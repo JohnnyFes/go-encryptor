@@ -20,7 +20,7 @@ go get github.com/GandzyTM/go-encryptor@latest
 Если репозиторий находится в приватной организации GitHub, настройте переменную окружения `GOPRIVATE`, чтобы `go` не обращался к публичным прокси и checksum-сервисам:
 
 ```sh
-export GOPRIVATE=github.com/GandzyTM
+export GOPRIVATE=github.com/JohnnyFes
 ```
 
 - Это нужно выполнить локально и в CI/CD пайплайнах, если модуль недоступен публично.
@@ -30,7 +30,7 @@ export GOPRIVATE=github.com/GandzyTM
 ```yaml
 # Пример для GitHub Actions
 env:
-  GOPRIVATE: github.com/GandzyTM
+  GOPRIVATE: github.com/JohnnyFes
 ```
 
 ## Использование
@@ -39,8 +39,8 @@ env:
 
 ```go
 import (
-    "github.com/GandzyTM/go-encryptor/pkg/config"
-    "github.com/GandzyTM/go-encryptor/pkg/encryption"
+    "github.com/JohnnyFes/go-encryptor/pkg/config"
+    "github.com/JohnnyFes/go-encryptor/pkg/encryption"
 )
 
 // Создаем конфигурацию
